@@ -7,7 +7,6 @@ class Form(models.Model):
     password = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
-        manage = false
         db_table = 'form'
 
 class Ownership(models.Model):
