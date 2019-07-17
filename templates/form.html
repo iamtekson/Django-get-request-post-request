@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<style type="text/css">
+		table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+	</style>
+</head>
+<body>
+	<form method="POST" action='/formSubmit'>
+    {% csrf_token %}
+    
+		<h3>Ownership Detail</h3>
+		Name: <input type="text" name="name"><br><br>
+		Ward: <input type="text" name="ward"><br><br>
+		tole name: <input type="text" name="tname"><br><br>
+		House number: <input type="text" name="hnumber"><br><br>
+		Gender: <input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="male">Female<br><br>
+		Religeous: <select name="religeous">
+					<option>Select</option>
+					<option>Hindu</option>
+					<option>Buddhist</option>
+					<option>Islam</option>
+					<option>Isai</option>
+				</select>
+    <br><br>
+    language: <input type="text" name="language"> <br><br>
+
+		<h3>Residence Detail</h3>
+		Owner type: <select name="ownertype"><option>select</option><option>Own</option><option>Lease</option><option>Corporation</option></select><br><br>
+		House type: <select name="housetype">
+						<option>select</option>
+						<option>Khar</option>
+						<option>Tin</option>
+						<option>Cement</option>
+						<option>Stone</option>
+					</select><br><br>
+		Land type: <input type="text" name="landtype"><br><br> 
+		Total room: <input type="text" name="totalroom"><br><br>
+		House used: <input type="text" name="houseused"><br><br>
+		House area: <input type="text" name="housearea"><br><br>
+		Earthquake resistance: <input type="text" name="earthquake"><br><br>
+
+		<h3>Service Detail</h3>
+		<table>
+  <tr>
+    <th>Facilities</th>
+    <th>Yes/no</th> 
+  </tr>
+  <tr>
+    <td>Radio</td>
+    <td><select name="radio"><option>Yes</option><option>No</option></select></td>
+  </tr>
+  <tr>
+    <td>TV</td>
+    <td><select name="tv"><option>Yes</option><option>No</option></select></td>
+  </tr>
+  <tr>
+    <td>Mobile</td>
+    <td><select name="mobile"><option>Yes</option><option>No</option></select></td>
+  </tr>
+  <tr>
+      <td>computer</td>
+      <td><select name="computer"><option>Yes</option><option>No</option></select></td>
+    </tr>
+  <tr>
+    <td>Internet</td>
+    <td><select name="internet"><option>Yes</option><option>No</option></select></td>
+  </tr>
+  <tr>
+    <td>MoterCycle</td>
+    <td><select name="motercycle"><option>Yes</option><option>No</option></select></td>
+    </tr>
+    <tr>
+    <td>Car</td>
+    <td><select name="car"><option>Yes</option><option>No</option></select></td>
+  </tr><tr>
+    <td>Hitar</td>
+    <td><select name="hitar"><option>Yes</option><option>No</option></select></td>
+  </tr>
+
+</table>
+<br><br>
+
+<p align="center"><button type="submit" name="submit">Submit Data</button></p>
+
+
+	</form>
+</body>
+</html>
