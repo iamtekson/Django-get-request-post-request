@@ -15,15 +15,16 @@ def form(request):
     return render(request, 'form.html')
 
 def submit(request):
-    name = request.POST['name']
-    email = request.POST['email']
-    password = request.POST['password']
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        password = request.POST['password']
 
 
-    info = Form(name=name, email=email, password=password)
-    info.save()
+        info = Form(name=name, email=email, password=password)
+        info.save()
 
-    return render(request, 'submit.html')
+        return render(request, 'submit.html')
 
 def formSubmit(request):
     name = request.POST['name']
